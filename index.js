@@ -1,11 +1,12 @@
-// index.js
 const express = require('express');
 const admin = require('firebase-admin');
 const cors = require('cors');
 
-// ✅ تهيئة Firebase Admin باستخدام حساب الخدمة
+// ✅ تهيئة Firebase Admin باستخدام المتغير البيئي بدلاً من الملف
 admin.initializeApp({
-  credential: admin.credential.cert(require('./serviceAccountKey.json')),
+  credential: admin.credential.cert(
+    JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT)
+  ),
 });
 
 const app = express();
