@@ -13,7 +13,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 🚀 إضافة الإحالة
+// ✅ Endpoint للـ GET / (واجهة ترحيبية)
+app.get('/', (req, res) => {
+  res.send('🚀 Welcome to the FlySky Referral Server! API is ready!');
+});
+
+// 🚀 Endpoint لإضافة الإحالة
 app.post('/addReferral', async (req, res) => {
   const { referrerCode, newUserEmail } = req.body;
 
