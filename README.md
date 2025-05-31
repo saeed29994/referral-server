@@ -1,2 +1,2 @@
-"# flysky-referral-server" 
-"# referral-server" 
+"# flysky-referral-api" 
+"# referral-api" 
